@@ -3,6 +3,7 @@ import Head from "next/head";
 import Hero from "../components/Hero";
 import Grid from "../components/Grid";
 import SectionTitle from "../components/SectionTitle";
+import Reviews from "../components/Reviews";
 
 export default function Home() {
 	const [services, setServices] = useState([
@@ -28,6 +29,34 @@ export default function Home() {
 			imageAlt: "Icon for DevOps",
 		},
 	]);
+
+	const [reviews, setReviews] = useState([
+		{
+			name: "Merhawi F.",
+			comment:
+				"High quality solution with reasonable price. Features entirely based on you request.",
+			imageSrc: "/merhawi.png",
+			imageAlt: "Icon for Web Dev",
+			value: 0.1,
+			position: "CTO",
+		},
+		{
+			name: "Kaleab B.",
+			comment:
+				"High quality mobile apps to your business needs. Features entirely based on you request.",
+			imageAlt: "Icon for Mobile app development",
+			value: 4,
+			position: "CEO",
+		},
+		// {
+		// 	name: "DevOps",
+		// 	comment:
+		// 		"If your looking for partner or have a product to be managed. let's grow together!",
+		// 	imageSrc: "/devops.png",
+		// 	imageAlt: "Icon for DevOps",
+		// 	value: 3,
+		// },
+	]);
 	return (
 		<>
 			<Head>
@@ -44,6 +73,11 @@ export default function Home() {
 				<SectionTitle title={"Services"} desc="Quality with efficiency" />
 
 				<Grid items={services} />
+				<SectionTitle
+					title={"Recommendations"}
+					desc="What people say about me"
+				/>
+				<Reviews items={reviews} />
 			</main>
 		</>
 	);
